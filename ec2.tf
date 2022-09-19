@@ -6,9 +6,12 @@ resource "aws_instance" "first_instance" {
         "Name" = "terraform-day24"
     }
     user_data = <<-EOF
-                   #! /bin/bash
-                   echo "Hello world" > index.html
-                   nohup busybox httpd -f -p 8080 &
+                    #!/bin/bash
+                    yum update -y
+                    yum install -y httpd.x86_64
+                    systemctl start httpd.service
+                    systemctl enable httpd.service
+                    echo “Hello World from $(hostname -f)” > /var/www/html/index.html
     EOF
     
     vpc_security_group_ids = [ aws_security_group.security_group.id ]
