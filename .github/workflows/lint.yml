@@ -28,10 +28,10 @@ jobs:
         uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
-          author_name: Sloth Backend - dev
-          fields: repo,commit,message,author # action,eventName,ref,workflow,job,took 추가할 수 있음
+          author_name: Github Action Test
+          fields: repo,message,commit,author,action,eventName,ref,workflow,job,took # action,eventName,ref,workflow,job,took 추가할 수 있음
           mention: here
           if_mention: failure,cancelled
         env:
-          SLACK_WEBHOOK_URL: "https://hooks.slack.com/services/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" # required
+          SLACK_WEBHOOK_URL: "https://hooks.slack.com/services/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" # required
         if: always() # Pick up events even if the job fails or is canceled.
