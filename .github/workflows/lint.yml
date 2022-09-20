@@ -33,5 +33,5 @@ jobs:
           mention: here
           if_mention: failure,cancelled
         env:
-          SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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 
+          SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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 
         if: always() # Pick up events even if the job fails or is canceled.
